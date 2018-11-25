@@ -27,5 +27,5 @@ public interface UserDAO {
     List<User> loadUsers();
 
     @Query("SELECT NAME FROM USER")
-    List<User> loadNamesFromUser();
+    List<String> loadNamesFromUser();
 }

@@ -23,4 +23,7 @@ public interface StoreCategoryDAO {
 
     @Query("DELETE FROM STORE_CATEGORY WHERE STORE_CATEGORY.IDSTORE_CATEGORY == :idStoreCategory")
     void delete(Integer idStoreCategory);
+
+    @Query("SELECT * FROM STORE_CATEGORY WHERE STORE_CATEGORY.IDSTORE_CATEGORY == :idStoreCategory")
+    StoreCategory loadStoreCategoryById(Integer idStoreCategory);
 }

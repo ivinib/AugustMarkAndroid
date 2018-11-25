@@ -7,6 +7,8 @@ import android.arch.persistence.room.Update;
 
 import com.example.vi_ni.augustmark.model.ServiceStatus;
 
+import java.util.List;
+
 @Dao
 public interface ServiceStatusDAO {
     @Insert
@@ -20,5 +22,8 @@ public interface ServiceStatusDAO {
 
     @Query("SELECT * FROM SERVICE_STATUS WHERE SERVICE_STATUS.IDSERVICE_STATUS == :idServiceStatus")
     ServiceStatus loadServiceStatusById(Integer idServiceStatus);
+
+    @Query("SELECT * FROM SERVICE_STATUS")
+    List<ServiceStatus> loadServiceStatuses();
 
 }

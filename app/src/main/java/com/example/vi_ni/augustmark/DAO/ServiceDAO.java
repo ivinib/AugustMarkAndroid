@@ -23,10 +23,13 @@ public interface ServiceDAO {
     void delete(Integer idService);
 
     @Query("SELECT * FROM SERVICE WHERE SERVICE.IDSERVICE == :idService")
-    void loadServiceById(Integer idService);
+    Service loadServiceById(Integer idService);
 
     @Query("SELECT NAME FROM SERVICE")
     List<String> loadNamesServices();
+
+    @Query("SELECT * FROM SERVICE")
+    List<Service> loadServices();
 
     @Query("SELECT SE.NAME, SE.DESCRIPTION, ST.NAME, ST.EMAIL, ST.PHONE, ST.CNPJ " +
             "FROM SERVICE SE INNER JOIN STORE ST " +
