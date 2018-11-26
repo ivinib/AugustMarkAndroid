@@ -33,7 +33,7 @@ public interface ServiceDAO {
 
     @Query("SELECT SE.NAME_SERVICE, SE.DESCRIPTION, ST.NAME_STORE, ST.EMAIL_STORE, ST.PHONE_STORE, ST.CNPJ " +
             "FROM SERVICE_TABLE SE INNER JOIN STORE_TABLE ST " +
-            "ON ST.IDSTORE = SE.IDSTORE_FK")
+            "ON ST.IDSTORE = SE.IDSTORE_FK1")
     List<ServiceJoin> loadServiceJoin();
 
     static class ServiceJoin{

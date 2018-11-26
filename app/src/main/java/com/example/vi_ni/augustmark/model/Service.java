@@ -6,7 +6,7 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity(tableName = "SERVICE_TABLE",
-        foreignKeys = @ForeignKey(entity = Store.class, parentColumns = "IDSTORE",childColumns = "IDSTORE_FK"))
+        foreignKeys = @ForeignKey(entity = Store.class, parentColumns = "IDSTORE",childColumns = "IDSTORE_FK1"))
 public class Service {
 
     @PrimaryKey(autoGenerate = true)
@@ -19,7 +19,7 @@ public class Service {
     @ColumnInfo(name = "DESCRIPTION")
     private String description;
 
-    @ColumnInfo(name = "IDSTORE_FK")
+    @ColumnInfo(name = "IDSTORE_FK1")
     private Integer idStore;
 
     public Service(){}
