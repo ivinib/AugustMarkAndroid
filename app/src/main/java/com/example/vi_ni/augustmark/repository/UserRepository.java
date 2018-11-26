@@ -37,6 +37,14 @@ public class UserRepository {
         mUserDAO.delete(idUser);
     }
 
+    public User isExistUser(String username, String password){
+        User user = new User();
+
+        user = mUserDAO.isExistUser(username,password);
+
+        return user;
+    }
+
     private static class insertAsyncTask extends AsyncTask<User,Void,Void>{
         private UserDAO mAsyncTaskDAO;
 

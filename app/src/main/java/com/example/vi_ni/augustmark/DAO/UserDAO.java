@@ -28,4 +28,10 @@ public interface UserDAO {
 
     @Query("SELECT NAME_USER FROM USER_TABLE")
     List<String> loadNamesFromUser();
+
+    @Query("SELECT * FROM USER_TABLE U WHERE U.USERNAME == :username AND U.PASSWORD == :password")
+    User isExistUser(String username, String password);
+
+    /*@Query("SELECT * FROM USER_TABLE U WHERE U.USERNAME == :username AND U.PASSWORD == :password")
+    User createUser(String username, String password);*/
 }
