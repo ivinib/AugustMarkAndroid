@@ -21,24 +21,23 @@ public interface StoreDAO {
     @Update
     void update(Store store);
 
-    @Query("DELETE FROM STORE WHERE STORE.IDSTORE == :idStore")
+    @Query("DELETE FROM STORE_TABLE WHERE STORE_TABLE.IDSTORE == :idStore")
     void delete(Integer idStore);
 
-    @Query("SELECT * FROM STORE WHERE STORE.IDSTORE == :idStore")
+    @Query("SELECT * FROM STORE_TABLE WHERE STORE_TABLE.IDSTORE == :idStore")
     Store loadStoreById(Integer idStore);
 
-    @Query("SELECT * FROM STORE ORDER BY NAME ASC")
+    @Query("SELECT * FROM STORE_TABLE ORDER BY NAME_STORE ASC")
     List<Store> loadStores();
 
-    @Query("SELECT S.NAME, S.EMAIL, S.PHONE, S.CNPJ, U.NAME, U.CPF, U.EMAIL, U.PHONE, SC.NAME " +
-            "FROM STORE S INNER JOIN USER U " +
-            "ON S.IDUSER = U.IDUSER " +
-            "INNER JOIN STORE_CATEGORY SC " +
-            "ON S.IDSTORE_CATEGORY = SC.IDSTORE_CATEGORY " +
-            "ORDER BY S.NAME")
+    @Query("SELECT S.NAME_STORE, S.EMAIL_STORE, S.PHONE_STORE, S.CNPJ, U.NAME_USER, U.CPF, U.EMAIL_USER, U.PHONE_USER, SC.NAME_STORE_CATEGORY " +
+            "FROM STORE_TABLE S INNER JOIN USER_TABLE U " +
+            "ON S.IDUSER_FK = U.IDUSER " +
+            "INNER JOIN STORE_CATEGORY_TABLE SC " +
+            "ON S.IDSTORE_CATEGORY_FK = SC.IDSTORE_CATEGORY ")
     List<StoreJoin> loadStoresJoin();
 
-    @Query("SELECT NAME FROM STORE")
+    @Query("SELECT NAME_STORE FROM STORE_TABLE")
     List<String> loadStoresNames();
 
     static class StoreJoin{

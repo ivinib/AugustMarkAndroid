@@ -23,29 +23,29 @@ public interface ServiceScheduleDAO {
     @Update
     void update(ServiceSchedule serviceSchedule);
 
-    @Query("DELETE FROM SERVICE_SCHEDULE WHERE SERVICE_SCHEDULE.IDSERVICE_SCHEDULE == :idServiceSchedule")
+    @Query("DELETE FROM SERVICE_SCHEDULE_TABLE WHERE SERVICE_SCHEDULE_TABLE.IDSERVICE_SCHEDULE == :idServiceSchedule")
     void delete(Integer idServiceSchedule);
 
-    @Query("SELECT * FROM SERVICE_SCHEDULE WHERE SERVICE_SCHEDULE.IDSERVICE_SCHEDULE == :idServiceSchedule")
+    @Query("SELECT * FROM SERVICE_SCHEDULE_TABLE WHERE SERVICE_SCHEDULE_TABLE.IDSERVICE_SCHEDULE == :idServiceSchedule")
     ServiceSchedule loadScheduleById(Integer idServiceSchedule);
 
-    @Query("SELECT * FROM SERVICE_SCHEDULE")
+    @Query("SELECT * FROM SERVICE_SCHEDULE_TABLE")
     List<ServiceSchedule> loadAllServiceSchedules();
 
 
     @Query("SELECT SSC.SCHEDULING_DATE, SSC.REQUEST_DATE, " +
-            "S.NAME, S.DESCRIPTION, " +
+            "S.NAME_SERVICE, S.DESCRIPTION, " +
             "A.COUNTRY, A.STATE, A.STREET, A.CITY, A.DISTRICT, A.NUM, " +
-            "U.NAME, U.EMAIL, U.PHONE, U.CPF, " +
-            "SST.NAME " +
-            "FROM SERVICE_SCHEDULE SSC INNER JOIN SERVICE S " +
-            "ON SSC.IDSERVICE = S.IDSERVICE " +
-            "INNER JOIN ADDRESS A " +
-            "ON A.IDADDRESS = SSC.IDADDRESS " +
-            "INNER JOIN USER U " +
-            "ON U.IDUSER = SSC.IDUSER " +
-            "INNER JOIN SERVICE_STATUS SST " +
-            "ON SST.IDSERVICE_STATUS = SSC.IDSERVICE_STATUS")
+            "U.NAME_USER, U.EMAIL_USER, U.PHONE_USER, U.CPF, " +
+            "SST.NAME_SERVICE_STATUS " +
+            "FROM SERVICE_SCHEDULE_TABLE SSC INNER JOIN SERVICE_TABLE S " +
+            "ON SSC.IDSERVICE_FK = S.IDSERVICE " +
+            "INNER JOIN ADDRESS_TABLE A " +
+            "ON A.IDADDRESS = SSC.IDADDRESS_FK " +
+            "INNER JOIN USER_TABLE U " +
+            "ON U.IDUSER = SSC.IDUSER_FK " +
+            "INNER JOIN SERVICE_STATUS_TABLE SST " +
+            "ON SST.IDSERVICE_STATUS = SSC.IDSERVICE_STATUS_FK")
     List<ServiceScheduleJoin> loadServiceScheduleJoin();
 
     static class ServiceScheduleJoin{

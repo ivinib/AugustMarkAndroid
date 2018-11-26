@@ -18,12 +18,12 @@ public interface ProductCategoryDAO {
     @Update
     void update(ProductCategory productCategory);
 
-    @Query("DELETE FROM PRODUCT_CATEGORY WHERE PRODUCT_CATEGORY.IDPRODUCT_CATEGORY == :idProductCategory")
+    @Query("DELETE FROM PRODUCT_CATEGORY_TABLE WHERE PRODUCT_CATEGORY_TABLE.IDPRODUCT_CATEGORY == :idProductCategory")
     void delete (Integer idProductCategory);
 
-    @Query("SELECT * FROM PRODUCT_CATEGORY WHERE PRODUCT_CATEGORY.IDPRODUCT_CATEGORY == :idProductCategory")
+    @Query("SELECT * FROM PRODUCT_CATEGORY_TABLE WHERE PRODUCT_CATEGORY_TABLE.IDPRODUCT_CATEGORY == :idProductCategory")
     ProductCategory loadProductCategoryById(Integer idProductCategory);
 
-    @Query("SELECT * FROM PRODUCT_CATEGORY")
+    @Query("SELECT * FROM PRODUCT_CATEGORY_TABLE")
     List<ProductCategory> loadAllProductCategories();
 }

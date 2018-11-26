@@ -18,12 +18,12 @@ public interface StoreCategoryDAO {
     @Update
     void update(StoreCategory storeCategory);
 
-    @Query("SELECT * FROM STORE_CATEGORY ORDER BY NAME ASC")
+    @Query("SELECT * FROM STORE_CATEGORY_TABLE")
     List<StoreCategory> loadStoreCategory();
 
-    @Query("DELETE FROM STORE_CATEGORY WHERE STORE_CATEGORY.IDSTORE_CATEGORY == :idStoreCategory")
+    @Query("DELETE FROM STORE_CATEGORY_TABLE WHERE STORE_CATEGORY_TABLE.IDSTORE_CATEGORY == :idStoreCategory")
     void delete(Integer idStoreCategory);
 
-    @Query("SELECT * FROM STORE_CATEGORY WHERE STORE_CATEGORY.IDSTORE_CATEGORY == :idStoreCategory")
+    @Query("SELECT * FROM STORE_CATEGORY_TABLE WHERE STORE_CATEGORY_TABLE.IDSTORE_CATEGORY == :idStoreCategory")
     StoreCategory loadStoreCategoryById(Integer idStoreCategory);
 }

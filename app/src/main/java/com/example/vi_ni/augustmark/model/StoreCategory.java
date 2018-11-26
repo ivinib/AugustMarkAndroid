@@ -4,13 +4,13 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity(tableName = "STORE_CATEGORY")
+@Entity(tableName = "STORE_CATEGORY_TABLE")
 public class StoreCategory {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "IDSTORE_CATEGORY")
     private Integer idStoreCategory;
 
-    @ColumnInfo(name = "NAME")
+    @ColumnInfo(name = "NAME_STORE_CATEGORY")
     private String name;
 
     @ColumnInfo(name = "DESCRIPTION")

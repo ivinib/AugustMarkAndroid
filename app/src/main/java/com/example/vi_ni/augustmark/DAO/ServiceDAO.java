@@ -19,21 +19,21 @@ public interface ServiceDAO {
     @Update
     void update(Service service);
 
-    @Query("DELETE FROM SERVICE WHERE SERVICE.IDSERVICE == :idService")
+    @Query("DELETE FROM SERVICE_TABLE WHERE SERVICE_TABLE.IDSERVICE == :idService")
     void delete(Integer idService);
 
-    @Query("SELECT * FROM SERVICE WHERE SERVICE.IDSERVICE == :idService")
+    @Query("SELECT * FROM SERVICE_TABLE WHERE SERVICE_TABLE.IDSERVICE == :idService")
     Service loadServiceById(Integer idService);
 
-    @Query("SELECT NAME FROM SERVICE")
+    @Query("SELECT NAME_SERVICE FROM SERVICE_TABLE")
     List<String> loadNamesServices();
 
-    @Query("SELECT * FROM SERVICE")
+    @Query("SELECT * FROM SERVICE_TABLE")
     List<Service> loadServices();
 
-    @Query("SELECT SE.NAME, SE.DESCRIPTION, ST.NAME, ST.EMAIL, ST.PHONE, ST.CNPJ " +
-            "FROM SERVICE SE INNER JOIN STORE ST " +
-            "ON ST.IDSTORE = SE.IDSTORE")
+    @Query("SELECT SE.NAME_SERVICE, SE.DESCRIPTION, ST.NAME_STORE, ST.EMAIL_STORE, ST.PHONE_STORE, ST.CNPJ " +
+            "FROM SERVICE_TABLE SE INNER JOIN STORE_TABLE ST " +
+            "ON ST.IDSTORE = SE.IDSTORE_FK")
     List<ServiceJoin> loadServiceJoin();
 
     static class ServiceJoin{

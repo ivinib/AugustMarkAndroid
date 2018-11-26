@@ -17,13 +17,13 @@ public interface ServiceStatusDAO {
     @Update
     void update(ServiceStatus serviceStatus);
 
-    @Query("DELETE FROM SERVICE_STATUS WHERE SERVICE_STATUS.IDSERVICE_STATUS == :idServiceStatus")
+    @Query("DELETE FROM SERVICE_STATUS_TABLE WHERE SERVICE_STATUS_TABLE.IDSERVICE_STATUS == :idServiceStatus")
     void delete(Integer idServiceStatus);
 
-    @Query("SELECT * FROM SERVICE_STATUS WHERE SERVICE_STATUS.IDSERVICE_STATUS == :idServiceStatus")
+    @Query("SELECT * FROM SERVICE_STATUS_TABLE WHERE SERVICE_STATUS_TABLE.IDSERVICE_STATUS == :idServiceStatus")
     ServiceStatus loadServiceStatusById(Integer idServiceStatus);
 
-    @Query("SELECT * FROM SERVICE_STATUS")
+    @Query("SELECT * FROM SERVICE_STATUS_TABLE")
     List<ServiceStatus> loadServiceStatuses();
 
 }

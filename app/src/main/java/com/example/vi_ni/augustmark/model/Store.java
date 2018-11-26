@@ -5,30 +5,30 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity(tableName = "STORE",
-        foreignKeys = {@ForeignKey(entity = User.class, parentColumns = "IDUSER", childColumns = "IDUSER"),
-        @ForeignKey(entity = StoreCategory.class, parentColumns = "IDSTORE_CATEGORY", childColumns = "IDSTORE_CATEGORY")})
+@Entity(tableName = "STORE_TABLE",
+        foreignKeys = {@ForeignKey(entity = User.class, parentColumns = "IDUSER", childColumns = "IDUSER_FK"),
+        @ForeignKey(entity = StoreCategory.class, parentColumns = "IDSTORE_CATEGORY", childColumns = "IDSTORE_CATEGORY_FK")})
 public class Store {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "IDSTORE")
     private Integer idStore;
 
-    @ColumnInfo(name = "NAME")
+    @ColumnInfo(name = "NAME_STORE")
     private String name;
 
-    @ColumnInfo(name = "EMAIL")
+    @ColumnInfo(name = "EMAIL_STORE")
     private String email;
 
-    @ColumnInfo(name = "PHONE")
+    @ColumnInfo(name = "PHONE_STORE")
     private String phone;
 
     @ColumnInfo(name = "CNPJ")
     private String cnpj;
 
-    @ColumnInfo(name = "IDUSER")
+    @ColumnInfo(name = "IDUSER_FK")
     private Integer idUser;
 
-    @ColumnInfo(name = "IDSTORE_CATEGORY")
+    @ColumnInfo(name = "IDSTORE_CATEGORY_FK")
     private Integer idStoreCategory;
 
     public Store(){}

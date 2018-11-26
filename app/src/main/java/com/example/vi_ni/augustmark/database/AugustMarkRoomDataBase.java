@@ -8,7 +8,7 @@ import android.content.Context;
 import com.example.vi_ni.augustmark.DAO.*;
 import com.example.vi_ni.augustmark.model.*;
 
-@Database(entities = {Address.class, Product.class, ProductCategory.class, Service.class, ServiceSchedule.class, ServiceStatus.class, Store.class, StoreCategory.class}, version = 1)
+@Database(entities = {Address.class, Product.class, ProductCategory.class, Service.class, ServiceSchedule.class, ServiceStatus.class, Store.class, StoreCategory.class, User.class}, version = 1)
 public abstract class AugustMarkRoomDataBase extends RoomDatabase {
 
     private static volatile AugustMarkRoomDataBase INSTANCE;

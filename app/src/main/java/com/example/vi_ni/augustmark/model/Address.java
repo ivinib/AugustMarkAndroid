@@ -5,9 +5,9 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity(tableName = "ADDRESS",
+@Entity(tableName = "ADDRESS_TABLE",
         foreignKeys =
-        @ForeignKey(entity = Store.class, parentColumns = "IDSTORE", childColumns = "IDSTORE"))
+        @ForeignKey(entity = Store.class, parentColumns = "IDSTORE", childColumns = "IDSTORE_FK"))
 public class Address {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "IDADDRESS")
@@ -31,7 +31,7 @@ public class Address {
     @ColumnInfo(name = "NUM")
     private Integer num;
 
-    @ColumnInfo(name = "IDSTORE")
+    @ColumnInfo(name = "IDSTORE_FK")
     private Integer idStore;
 
     public Address(){}

@@ -17,15 +17,15 @@ public interface UserDAO {
     @Update
     void update(User user);
 
-    @Query("SELECT * FROM USER WHERE USER.IDUSER == :idUser")
+    @Query("SELECT * FROM USER_TABLE WHERE USER_TABLE.IDUSER == :idUser")
     User loadUserById(Integer idUser);
 
-    @Query("DELETE FROM USER WHERE USER.IDUSER == :idUser")
+    @Query("DELETE FROM USER_TABLE WHERE USER_TABLE.IDUSER == :idUser")
     void delete(Integer idUser);
 
-    @Query("SELECT * FROM USER ORDER BY NAME ASC")
+    @Query("SELECT * FROM USER_TABLE ORDER BY NAME_USER ASC")
     List<User> loadUsers();
 
-    @Query("SELECT NAME FROM USER")
+    @Query("SELECT NAME_USER FROM USER_TABLE")
     List<String> loadNamesFromUser();
 }

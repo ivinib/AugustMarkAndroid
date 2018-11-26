@@ -19,18 +19,18 @@ public interface AddressDAO {
     @Update
     void update(Address address);
 
-    @Query("DELETE FROM ADDRESS WHERE ADDRESS.IDADDRESS == :idAddress")
+    @Query("DELETE FROM ADDRESS_TABLE WHERE ADDRESS_TABLE.IDADDRESS == :idAddress")
     void delete(Integer idAddress);
 
-    @Query("SELECT * FROM ADDRESS WHERE ADDRESS.IDADDRESS == :idAddress")
+    @Query("SELECT * FROM ADDRESS_TABLE WHERE ADDRESS_TABLE.IDADDRESS == :idAddress")
     Address loadAddressById(Integer idAddress);
 
-    @Query("SELECT * FROM ADDRESS")
+    @Query("SELECT * FROM ADDRESS_TABLE")
     List<Address> loadAllAddresses();
 
-    @Query("SELECT A.COUNTRY, A.STATE, A.CITY, A.STREET, A.DISTRICT, A.NUM, S.NAME, S.EMAIL, S.PHONE, S.CNPJ " +
-           "FROM ADDRESS A INNER JOIN STORE S " +
-           "ON A.IDSTORE = S.IDSTORE")
+    @Query("SELECT A.COUNTRY, A.STATE, A.CITY, A.STREET, A.DISTRICT, A.NUM, S.NAME_STORE, S.EMAIL_STORE, S.PHONE_STORE, S.CNPJ " +
+           "FROM ADDRESS_TABLE A INNER JOIN STORE_TABLE S " +
+           "ON A.IDSTORE_FK = S.IDSTORE")
     List<AddressJoin> loadAddressJoin();
 
     static class AddressJoin{

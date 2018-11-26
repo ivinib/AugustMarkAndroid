@@ -5,17 +5,17 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity(tableName = "PRODUCT",
+@Entity(tableName = "PRODUCT_TABLE",
         foreignKeys = {
-            @ForeignKey(entity = Store.class, parentColumns = "IDSTORE",childColumns = "IDSTORE"),
-            @ForeignKey(entity = ProductCategory.class, parentColumns = "IDPRODUCT_CATEGORY", childColumns = "IDPRODUCT_CATEGORY")
+            @ForeignKey(entity = Store.class, parentColumns = "IDSTORE",childColumns = "IDSTORE_FK"),
+            @ForeignKey(entity = ProductCategory.class, parentColumns = "IDPRODUCT_CATEGORY", childColumns = "IDPRODUCT_CATEGORY_FK")
         })
 public class Product {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "IDPRODUCT")
     private Integer idProduct;
 
-    @ColumnInfo(name = "NAME")
+    @ColumnInfo(name = "NAME_PRODUCT")
     private String name;
 
     @ColumnInfo(name = "PRICE")
@@ -24,10 +24,10 @@ public class Product {
     @ColumnInfo(name = "STOCK")
     private Integer stock;
 
-    @ColumnInfo(name = "IDSTORE")
+    @ColumnInfo(name = "IDSTORE_FK")
     private Integer idStore;
 
-    @ColumnInfo(name = "IDPRODUCT_CATEGORY")
+    @ColumnInfo(name = "IDPRODUCT_CATEGORY_FK")
     private Integer idProductCategory;
 
     public Product(){}

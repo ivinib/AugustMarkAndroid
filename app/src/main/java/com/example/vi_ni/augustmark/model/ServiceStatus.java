@@ -4,13 +4,13 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity(tableName = "SERVICE_STATUS")
+@Entity(tableName = "SERVICE_STATUS_TABLE")
 public class ServiceStatus {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "IDSERVICE_STATUS")
     private Integer idServiceStatus;
 
-    @ColumnInfo(name = "NAME")
+    @ColumnInfo(name = "NAME_SERVICE_STATUS")
     private String name;
 
     public ServiceStatus(){}

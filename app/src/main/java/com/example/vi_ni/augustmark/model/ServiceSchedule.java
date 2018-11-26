@@ -8,12 +8,12 @@ import android.nfc.tech.NfcA;
 
 import java.util.Date;
 
-@Entity(tableName = "SERVICE_SCHEDULE",
+@Entity(tableName = "SERVICE_SCHEDULE_TABLE",
         foreignKeys = {
-            @ForeignKey(entity = Service.class, parentColumns = "IDSERVICE", childColumns = "IDSERVICE"),
-            @ForeignKey(entity = Address.class, parentColumns = "IDADDRESS", childColumns = "IDADDRESS") ,
-            @ForeignKey(entity = User.class, parentColumns = "IDUSER", childColumns = "IDUSER"),
-            @ForeignKey(entity = ServiceStatus.class, parentColumns = "IDSERVICE_STATUS", childColumns = "IDSERVICE_STATUS")
+            @ForeignKey(entity = Service.class, parentColumns = "IDSERVICE", childColumns = "IDSERVICE_FK"),
+            @ForeignKey(entity = Address.class, parentColumns = "IDADDRESS", childColumns = "IDADDRESS_FK") ,
+            @ForeignKey(entity = User.class, parentColumns = "IDUSER", childColumns = "IDUSER_FK"),
+            @ForeignKey(entity = ServiceStatus.class, parentColumns = "IDSERVICE_STATUS", childColumns = "IDSERVICE_STATUS_FK")
         })
 public class ServiceSchedule {
 
@@ -22,26 +22,26 @@ public class ServiceSchedule {
     private Integer idServiceSchedule;
 
     @ColumnInfo(name = "SCHEDULING_DATE")
-    private Date schedulingDate;
+    private String schedulingDate;
 
     @ColumnInfo(name = "REQUEST_DATE")
-    private Date requestDate;
+    private String requestDate;
 
-    @ColumnInfo(name = "IDSERVICE")
+    @ColumnInfo(name = "IDSERVICE_FK")
     private Integer idService;
 
-    @ColumnInfo(name = "IDADDRESS")
+    @ColumnInfo(name = "IDADDRESS_FK")
     private Integer idAddress;
 
-    @ColumnInfo(name = "IDUSER")
+    @ColumnInfo(name = "IDUSER_FK")
     private Integer idUser;
 
-    @ColumnInfo(name = "IDSERVICE_STATUS")
+    @ColumnInfo(name = "IDSERVICE_STATUS_FK")
     private Integer idServiceStatus;
 
     public ServiceSchedule(){}
 
-    public ServiceSchedule(Integer idServiceSchedule, Date schedulingDate, Date requestDate){
+    public ServiceSchedule(Integer idServiceSchedule, String schedulingDate, String requestDate){
         this.idServiceSchedule = idServiceSchedule;
         this.schedulingDate = schedulingDate;
         this.requestDate = requestDate;
@@ -51,11 +51,11 @@ public class ServiceSchedule {
         return idServiceSchedule;
     }
 
-    public Date getSchedulingDate() {
+    public String getSchedulingDate() {
         return schedulingDate;
     }
 
-    public Date getRequestDate() {
+    public String getRequestDate() {
         return requestDate;
     }
 
@@ -79,11 +79,11 @@ public class ServiceSchedule {
         this.idServiceSchedule = idServiceSchedule;
     }
 
-    public void setSchedulingDate(Date schedulingDate) {
+    public void setSchedulingDate(String schedulingDate) {
         this.schedulingDate = schedulingDate;
     }
 
-    public void setRequestDate(Date requestDate) {
+    public void setRequestDate(String requestDate) {
         this.requestDate = requestDate;
     }
 
