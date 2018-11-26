@@ -29,6 +29,10 @@ public interface ServiceScheduleDAO {
     @Query("SELECT * FROM SERVICE_SCHEDULE WHERE SERVICE_SCHEDULE.IDSERVICE_SCHEDULE == :idServiceSchedule")
     ServiceSchedule loadScheduleById(Integer idServiceSchedule);
 
+    @Query("SELECT * FROM SERVICE_SCHEDULE")
+    List<ServiceSchedule> loadAllServiceSchedules();
+
+
     @Query("SELECT SSC.SCHEDULING_DATE, SSC.REQUEST_DATE, " +
             "S.NAME, S.DESCRIPTION, " +
             "A.COUNTRY, A.STATE, A.STREET, A.CITY, A.DISTRICT, A.NUM, " +
@@ -42,7 +46,7 @@ public interface ServiceScheduleDAO {
             "ON U.IDUSER = SSC.IDUSER " +
             "INNER JOIN SERVICE_STATUS SST " +
             "ON SST.IDSERVICE_STATUS = SSC.IDSERVICE_STATUS")
-    List<ServiceSchedule> loadServiceScheduleJoin();
+    List<ServiceScheduleJoin> loadServiceScheduleJoin();
 
     static class ServiceScheduleJoin{
         @Embedded

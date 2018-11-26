@@ -25,6 +25,9 @@ public interface AddressDAO {
     @Query("SELECT * FROM ADDRESS WHERE ADDRESS.IDADDRESS == :idAddress")
     Address loadAddressById(Integer idAddress);
 
+    @Query("SELECT * FROM ADDRESS")
+    List<Address> loadAllAddresses();
+
     @Query("SELECT A.COUNTRY, A.STATE, A.CITY, A.STREET, A.DISTRICT, A.NUM, S.NAME, S.EMAIL, S.PHONE, S.CNPJ " +
            "FROM ADDRESS A INNER JOIN STORE S " +
            "ON A.IDSTORE = S.IDSTORE")

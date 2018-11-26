@@ -29,6 +29,9 @@ public interface ProductDAO {
     @Query("SELECT NAME FROM PRODUCT")
     List<String> loadProductByName();
 
+    @Query("SELECT * FROM PRODUCT")
+    List<Product> loadAllProducts();
+
     @Query("SELECT P.NAME, P.PRICE, P.STOCK, PC.NAME, PC.DESCRIPTION, S.NAME, S.EMAIL, S.PHONE, S.CNPJ " +
             "FROM PRODUCT P INNER JOIN PRODUCT_CATEGORY PC " +
             "ON P.IDPRODUCT_CATEGORY = PC.IDPRODUCT_CATEGORY " +

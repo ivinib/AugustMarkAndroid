@@ -7,6 +7,8 @@ import android.arch.persistence.room.Update;
 
 import com.example.vi_ni.augustmark.model.ProductCategory;
 
+import java.util.List;
+
 @Dao
 public interface ProductCategoryDAO {
 
@@ -18,4 +20,10 @@ public interface ProductCategoryDAO {
 
     @Query("DELETE FROM PRODUCT_CATEGORY WHERE PRODUCT_CATEGORY.IDPRODUCT_CATEGORY == :idProductCategory")
     void delete (Integer idProductCategory);
+
+    @Query("SELECT * FROM PRODUCT_CATEGORY WHERE PRODUCT_CATEGORY.IDPRODUCT_CATEGORY == :idProductCategory")
+    ProductCategory loadProductCategoryById(Integer idProductCategory);
+
+    @Query("SELECT * FROM PRODUCT_CATEGORY")
+    List<ProductCategory> loadAllProductCategories();
 }
