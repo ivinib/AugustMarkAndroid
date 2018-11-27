@@ -8,7 +8,7 @@ import android.arch.persistence.room.PrimaryKey;
 public class User {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "IDUSER")
-    private Integer idUser;
+    private Long idUser;
 
     @ColumnInfo(name = "USERNAME")
     private String userName;
@@ -32,7 +32,7 @@ public class User {
     private String role;
 
     public User(){}
-    public User(Integer idUser, String userName, String email, String phone, String password, String name, String cpf, String role){
+    public User(Long idUser, String userName, String email, String phone, String password, String name, String cpf, String role){
         this.idUser = idUser;
         this.userName = userName;
         this.email = email;
@@ -43,7 +43,7 @@ public class User {
         this.role = role;
     }
 
-    public Integer getIdUser() { return idUser; }
+    public Long getIdUser() { return idUser; }
 
     public String getUserName() { return userName; }
 
@@ -59,7 +59,7 @@ public class User {
 
     public String getRole() { return role; }
 
-    public void setIdUser(Integer idUser) { this.idUser = idUser;  }
+    public void setIdUser(Long idUser) { this.idUser = idUser;  }
 
     public void setUserName(String userName) { this.userName = userName; }
 

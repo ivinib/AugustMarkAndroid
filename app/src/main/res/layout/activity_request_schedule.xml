@@ -2,49 +2,56 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".activity.SignInActivity">
+    tools:context=".activity.RequestScheduleActivity">
 
     <TextView
-        android:id="@+id/txtUsername"
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Usuário"
-        android:textColor="@color/black"
-        android:textSize="20sp"/>
+        android:text="Data do agendamento" />
 
     <EditText
-        android:id="@+id/edtUserName"
+        android:id="@+id/edtDateSchedule"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Digite seu usuário"
-        android:inputType="textPersonName" />
+        android:inputType="date" />
+
     <TextView
-        android:id="@+id/txtPassword"
+        android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Senha"
-        android:textColor="@color/black"
-        android:textSize="20sp"/>
+        android:text="Data da solicitação" />
 
     <EditText
-        android:id="@+id/edtPassword"
+        android:id="@+id/edtRequestDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Digite sua senha"
-        android:inputType="textPassword" />
+        android:inputType="date" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Serviço" />
+
+    <EditText
+        android:id="@+id/edtType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text" />
 
     <Button
-        android:id="@+id/btnSignIn"
+        android:id="@+id/btnAddSchedule"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:textSize="20sp"
+        android:text="Cadastrar"
         android:textAllCaps="false"
-        android:onClick="validateSignin"/>
+        android:onClick="addSchedule" />
 
 </LinearLayout>

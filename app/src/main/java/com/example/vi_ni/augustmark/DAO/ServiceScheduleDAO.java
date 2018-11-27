@@ -32,6 +32,9 @@ public interface ServiceScheduleDAO {
     @Query("SELECT * FROM SERVICE_SCHEDULE_TABLE")
     List<ServiceSchedule> loadAllServiceSchedules();
 
+    @Query("SELECT * FROM SERVICE_SCHEDULE_TABLE WHERE IDUSER_FK == :idUser")
+    List<ServiceSchedule> loadServiceSchedulesByIdUser(Long idUser);
+
 
     @Query("SELECT SSC.SCHEDULING_DATE, SSC.REQUEST_DATE, " +
             "S.NAME_SERVICE, S.DESCRIPTION, " +

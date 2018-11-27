@@ -13,6 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
+        android:textAllCaps="false"
+        android:textSize="20sp"
         android:onClick="signin"/>
 
 
@@ -20,7 +22,9 @@
         android:id="@+id/btnSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAllCaps="false"
         android:text="Cadastrar-se"
+        android:textSize="20sp"
         android:onClick="signup"/>
 
 </LinearLayout>

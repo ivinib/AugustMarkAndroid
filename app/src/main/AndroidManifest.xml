@@ -21,12 +21,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.SignInActivity" />
-        <activity android:name=".activity.SignUpActivity" />
+        <activity
+            android:name=".activity.SignInActivity"
+            android:label="@string/app_signin" />
+        <activity
+            android:name=".activity.SignUpActivity"
+            android:label="@string/app_signup" />
         <activity
             android:name=".activity.HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.ProfileActivity"
+            android:label="@string/app_profile"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.ScheduleActivity"
+            android:label="@string/app_requestschedule"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.StoreActivity"
+            android:label="@string/app_store"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.NewStoreActivity" />
+        <activity android:name=".activity.RequestScheduleActivity" />
+        <activity android:name=".activity.ListSchedule" />
+        <activity android:name=".activity.AllUsersActivity" />
+        <activity android:name=".activity.UpdateUserActivity"></activity>
     </application>
 
 </manifest>

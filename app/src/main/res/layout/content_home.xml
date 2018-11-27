@@ -9,4 +9,47 @@
     tools:showIn="@layout/app_bar_home"
     android:orientation="vertical">
 
+
+    <TextView
+        android:id="@+id/txtNameUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnRequestSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Solicitar Agendamento"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:onClick="requestSchedule"/>
+
+    <Button
+        android:id="@+id/btnSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ver agendamentos"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:onClick="schedule"/>
+
+    <Button
+        android:id="@+id/btnStore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Ver lojas"
+        android:textAllCaps="false"
+        android:onClick="store"/>
+    <Button
+        android:id="@+id/btnAllUsers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Ver todos usuários"
+        android:textAllCaps="false"
+        android:onClick="allUsers"/>
 </LinearLayout>

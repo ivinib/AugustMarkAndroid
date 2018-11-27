@@ -11,6 +11,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -18,22 +19,28 @@ import com.example.vi_ni.augustmark.R;
 import com.example.vi_ni.augustmark.model.User;
 import com.example.vi_ni.augustmark.repository.Repository;
 
-import java.io.Serializable;
+public class ProfileActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
 
-public class HomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, Serializable {
-
-    private Repository repository;
-    private User user;
-    private Long idUser;
-    TextView txtTeste, txtNameUser;
+    private User user = null;
+    private Repository repository = null;
+    private TextView txtNameProfile, txtEmailProfile, txtPhoneProfile, txtUsernameProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_profile);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -44,23 +51,24 @@ public class HomeActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        txtNameUser = findViewById(R.id.txtNameUser);
-
-        repository = new Repository(getApplicationContext());
-
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
+        repository = new Repository(getApplicationContext());
 
-        idUser = bundle.getLong("idUser");
+        txtNameProfile = findViewById(R.id.txtNameProfile);
+        txtEmailProfile = findViewById(R.id.txtEmailProfile);
+        txtPhoneProfile = findViewById(R.id.txtPhoneProfile);
+        txtUsernameProfile = findViewById(R.id.txtUsernameProfile);
 
-       if (user == null){
-           user = new User();
+        Long idUser = bundle.getLong("idUser");
+        if (user == null){
+            user = repository.getUserRepository().loadUserById(idUser);
 
-           user = repository.getUserRepository().loadUserById(idUser);
-       }
-
-        txtNameUser.setText("Olá "+user.getName());
-
+            txtNameProfile.setText(user.getName());
+            txtEmailProfile.setText(user.getEmail());
+            txtPhoneProfile.setText(user.getPhone());
+            txtUsernameProfile.setText(user.getUserName());
+        }
     }
 
     @Override
@@ -76,10 +84,10 @@ public class HomeActivity extends AppCompatActivity
     /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home, menu);
+        getMenuInflater().inflate(R.menu.profile, menu);
         return true;
-    }*/
-
+    }
+*/
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -103,51 +111,27 @@ public class HomeActivity extends AppCompatActivity
 
         if (id == R.id.schedule) {
             Intent intent = new Intent(this, ScheduleActivity.class);
-            intent.putExtra("idUser", idUser);
+            intent.putExtra("idUser", user.getIdUser());
             startActivity(intent);
 
         } else if (id == R.id.profile) {
             Intent intent = new Intent(this, ProfileActivity.class);
-            intent.putExtra("idUser", idUser);
+            intent.putExtra("idUser", user.getIdUser());
             startActivity(intent);
 
         } else if (id == R.id.store){
             Intent intent = new Intent(this, StoreActivity.class);
-            intent.putExtra("idUser", idUser);
+            intent.putExtra("idUser", user.getIdUser());
             startActivity(intent);
 
         } else if (id == R.id.requestSchedule){
             Intent intent = new Intent(this, RequestScheduleActivity.class);
-            intent.putExtra("idUser", idUser);
+            intent.putExtra("idUser", user.getIdUser());
             startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    public void schedule(View view){
-        Intent intent = new Intent(this, ListSchedule.class);
-        intent.putExtra("idUser", idUser);
-        startActivity(intent);
-    }
-
-    public void requestSchedule(View view){
-        Intent intent = new Intent(this, RequestScheduleActivity.class);
-        intent.putExtra("idUser", idUser);
-        startActivity(intent);
-    }
-
-    public void store(View view){
-        Intent intent = new Intent(this, StoreActivity.class);
-        intent.putExtra("idUser", idUser);
-        startActivity(intent);
-    }
-
-    public void allUsers(View view){
-        Intent intent = new Intent(this, AllUsersActivity.class);
-        intent.putExtra("idUser", idUser);
-        startActivity(intent);
     }
 }

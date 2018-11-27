@@ -18,10 +18,10 @@ public interface UserDAO {
     void update(User user);
 
     @Query("SELECT * FROM USER_TABLE WHERE USER_TABLE.IDUSER == :idUser")
-    User loadUserById(Integer idUser);
+    User loadUserById(Long idUser);
 
     @Query("DELETE FROM USER_TABLE WHERE USER_TABLE.IDUSER == :idUser")
-    void delete(Integer idUser);
+    void delete(Long idUser);
 
     @Query("SELECT * FROM USER_TABLE ORDER BY NAME_USER ASC")
     List<User> loadUsers();

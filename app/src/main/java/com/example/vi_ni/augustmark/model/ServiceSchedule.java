@@ -34,7 +34,7 @@ public class ServiceSchedule {
     private Integer idAddress;
 
     @ColumnInfo(name = "IDUSER_FK")
-    private Integer idUser;
+    private Long idUser;
 
     @ColumnInfo(name = "IDSERVICE_STATUS_FK")
     private Integer idServiceStatus;
@@ -67,7 +67,7 @@ public class ServiceSchedule {
         return idAddress;
     }
 
-    public Integer getIdUser() {
+    public Long getIdUser() {
         return idUser;
     }
 
@@ -95,7 +95,7 @@ public class ServiceSchedule {
         this.idAddress = idAddress;
     }
 
-    public void setIdUser(Integer idUser) {
+    public void setIdUser(Long idUser) {
         this.idUser = idUser;
     }
 

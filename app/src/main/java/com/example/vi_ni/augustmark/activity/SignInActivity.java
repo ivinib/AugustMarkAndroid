@@ -1,6 +1,7 @@
 package com.example.vi_ni.augustmark.activity;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -48,7 +49,8 @@ public class SignInActivity extends AppCompatActivity implements Serializable {
 
         if (user != null){
             Intent homeScreen = new Intent(SignInActivity.this, HomeActivity.class);
-            homeScreen.putExtra("user", user);
+            homeScreen.putExtra("idUser", user.getIdUser());
+            homeScreen.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(homeScreen);
         }
     }

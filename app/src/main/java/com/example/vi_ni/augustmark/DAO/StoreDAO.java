@@ -35,7 +35,7 @@ public interface StoreDAO {
             "ON S.IDUSER_FK = U.IDUSER " +
             "INNER JOIN STORE_CATEGORY_TABLE SC " +
             "ON S.IDSTORE_CATEGORY_FK = SC.IDSTORE_CATEGORY ")
-    List<StoreJoin> loadStoresJoin();
+    List<StoreJoin> loadStoreJoin();
 
     @Query("SELECT NAME_STORE FROM STORE_TABLE")
     List<String> loadStoresNames();
@@ -46,6 +46,6 @@ public interface StoreDAO {
         @Embedded
         public User user;
         @Embedded
-        StoreCategory storeCategory;
+        public StoreCategory storeCategory;
     }
 }

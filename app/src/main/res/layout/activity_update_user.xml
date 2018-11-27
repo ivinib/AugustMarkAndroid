@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.UpdateUserActivity">
+
+    <TextView
+        android:id="@+id/txtIdUserUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nome"
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+
+    <EditText
+        android:id="@+id/edtNameUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Digite seu nome" />
+
+    <TextView
+        android:id="@+id/txtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="E-mail"
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+
+    <EditText
+        android:id="@+id/edtEmailUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="Digite seu e-mail" />
+
+    <TextView
+        android:id="@+id/txtPhoneUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Telefone"
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+
+    <EditText
+        android:id="@+id/edtPhoneUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberSigned"
+        android:hint="Digite seu telefone" />
+
+
+    <TextView
+        android:id="@+id/txtUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nome de usuário"
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+
+    <EditText
+        android:id="@+id/edtUserNameUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Digite seu usuário" />
+
+    <TextView
+        android:id="@+id/txtPasswordUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Senha"
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+
+    <EditText
+        android:id="@+id/edtPasswordUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Digite sua senha" />
+
+    <TextView
+        android:id="@+id/txtPasswordConfirmUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirmação de senha"
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+
+    <EditText
+        android:id="@+id/edtPasswordConfirmUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Digite sua senha novamente" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar"
+        android:textSize="19sp"
+        android:textAllCaps="false"
+        android:onClick="validadeUpdate"/>
+</LinearLayout>

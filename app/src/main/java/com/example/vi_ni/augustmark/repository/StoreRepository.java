@@ -33,6 +33,11 @@ public class StoreRepository {
         new insertAsyncTask(mStoreDAO).execute(store);
     }
 
+    public List<StoreDAO.StoreJoin> loadStoreJoin(){
+        mStoresJoin = mStoreDAO.loadStoreJoin();
+        return mStoresJoin;
+    }
+
     public void update(Store store){
         mStoreDAO.update(store);
     }

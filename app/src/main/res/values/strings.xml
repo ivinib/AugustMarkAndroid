@@ -2,12 +2,24 @@
     <string name="app_name">August Mark</string>
     <string name="app_signin">August Mark - Login</string>
     <string name="app_signup">August Mark - Cadastro</string>
-    <string name="app_name_home">August Mark - Menu principal</string>
-    <string name="title_activity_home">HomeActivity</string>
+    <string name="app_store">August Mark - Lojas</string>
+    <string name="app_schedule">August Mark - Meus agendamentos</string>
+    <string name="app_requestschedule">August Mark - Solicitar Agendamento</string>
+    <string name="app_profile">August Mark - Meu Perfil</string>
+    <string name="title_activity_home">Bem-vindo - Tela inicial</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="title_activity_schedule">ScheduleActivity</string>
+    <string name="title_activity_store">StoreActivity</string>
+    <string name="title_activity_request_schedule">RequestSchedule</string>
+    <array name="options">
+        <item>Atualizar</item>
+        <item>Excluir</item>
+        <item>Cancelar</item>
+    </array>
 </resources>

@@ -22,7 +22,7 @@ public class UserRepository {
         return mUsers;
     }
 
-    public User loadUserById(Integer idUser){
+    public User loadUserById(Long idUser){
         return mUserDAO.loadUserById(idUser);
     }
 
@@ -33,7 +33,7 @@ public class UserRepository {
     public void update(User user){
         mUserDAO.update(user);
     }
-    public void delete (Integer idUser){
+    public void delete (Long idUser){
         mUserDAO.delete(idUser);
     }
 
