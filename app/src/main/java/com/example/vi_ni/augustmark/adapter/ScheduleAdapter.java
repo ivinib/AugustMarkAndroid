@@ -31,17 +31,13 @@ public class ScheduleAdapter  extends ArrayAdapter<ServiceScheduleDAO.ServiceSch
         }
         ServiceScheduleDAO.ServiceScheduleJoin scheduleJoin = getItem(position);
 
-        TextView nameService = mView.findViewById(R.id.txtNameServiceSchedule);
         TextView dateSchedule = mView.findViewById(R.id.txtScheduleDate);
         TextView dateRequest = mView.findViewById(R.id.txtRequestDate);
-        TextView nameUser = mView.findViewById(R.id.txtNameUserSchedule);
-        TextView address = mView.findViewById(R.id.txtAddresSchedule);
+        TextView nameUserSchedule = mView.findViewById(R.id.txtNameUserSchedule);
 
-        nameService.setText(scheduleJoin.serviceSchedule.getIdService());
         dateSchedule.setText(scheduleJoin.serviceSchedule.getSchedulingDate());
         dateRequest.setText(scheduleJoin.serviceSchedule.getRequestDate());
-        nameUser.setText(String.valueOf(scheduleJoin.serviceSchedule.getIdUser()));
-        address.setText(String.valueOf(scheduleJoin.serviceSchedule.getIdAddress()));
+        nameUserSchedule.setText(scheduleJoin.user.getName());
 
         return mView;
     }

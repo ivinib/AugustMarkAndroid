@@ -36,11 +36,13 @@ public class StoreAdapter extends ArrayAdapter<StoreDAO.StoreJoin> {
         TextView txtEmailStore = mView.findViewById(R.id.txtEmailStore);
         TextView txtPhoneStore = mView.findViewById(R.id.txtPhoneStore);
         TextView txtCNPJ = mView.findViewById(R.id.txtCnpj);
+        TextView txtNameUser = mView.findViewById(R.id.txtStoreUser);
 
         txtNameStore.setText(storeJoin.store.getName());
         txtEmailStore.setText(storeJoin.store.getEmail());
         txtPhoneStore.setText(storeJoin.store.getPhone());
         txtCNPJ.setText(storeJoin.store.getCnpj());
+        txtNameUser.setText(storeJoin.user.getName());
 
         return mView;
 

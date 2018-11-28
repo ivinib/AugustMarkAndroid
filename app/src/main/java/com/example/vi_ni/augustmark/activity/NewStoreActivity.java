@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.vi_ni.augustmark.R;
 import com.example.vi_ni.augustmark.model.Store;
+import com.example.vi_ni.augustmark.model.User;
 import com.example.vi_ni.augustmark.repository.Repository;
 
 public class NewStoreActivity extends AppCompatActivity {
@@ -19,14 +20,25 @@ public class NewStoreActivity extends AppCompatActivity {
    // private TextView textView7;
     private Repository repository;
     private Store store;
+    private Long idUser;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_store);
 
+        repository = new Repository(getApplicationContext());
+
         intent = getIntent();
         Bundle bundle = intent.getExtras();
+        idUser = bundle.getLong("idUser");
+
+        if (user == null){
+            user = new User();
+
+            user = repository.getUserRepository().loadUserById(idUser);
+        }
 
         edtNameStore = findViewById(R.id.edtNameStore);
         edtEmailStore = findViewById(R.id.edtEmailStore);
@@ -34,18 +46,8 @@ public class NewStoreActivity extends AppCompatActivity {
         edtCNPJStore = findViewById(R.id.edtCnpj);
         //txtIdStore = findViewById(R.id.txtIdStore);
 
-        repository = new Repository(getApplicationContext());
-        /*Integer idStore = bundle.getInt("idStore");
 
-        if (idStore != null){
-            store = new Store();
-            store = repository.getStoreRepository().loadStoreById(idStore);
 
-            edtNameStore.setText(store.getName());
-            edtPhoneStore.setText(store.getPhone());
-            edtEmailStore.setText(store.getEmail());
-            edtCNPJStore.setText(store.getCnpj());
-        }*/
     }
     public void addStore(View view){
         //Integer id = Integer.parseInt(txtIdStore.getText().toString());
@@ -56,14 +58,14 @@ public class NewStoreActivity extends AppCompatActivity {
         store.setEmail(edtEmailStore.getText().toString());
         store.setPhone(edtPhoneStore.getText().toString());
         store.setCnpj(edtCNPJStore.getText().toString());
+        store.setIdUser(user.getIdUser());
 
         repository.getStoreRepository().insert(store);
         Toast.makeText(this, "Loja cadastrada com sucesso", Toast.LENGTH_SHORT).show();
 
-        /*intent = new Intent(this, StoreActivity.class);
+       /* intent = new Intent(this, StoreActivity.class);
         startActivity(intent);*/
 
-        repository.getStoreRepository().loadStoreById(1);
 
     }
 }

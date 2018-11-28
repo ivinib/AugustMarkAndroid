@@ -40,7 +40,7 @@ public class SignUpActivity extends AppCompatActivity {
         String password = edtPassword.getText().toString();
         String passwordConfirm = edtPasswordConfirm.getText().toString();
 
-        /*if (name == null || name.equals("")){
+        if (name == null || name.equals("")){
             Toast.makeText(this, "Preencha o campo Nome", Toast.LENGTH_SHORT).show();
         }else if (email == null || email.equals("")){
             Toast.makeText(this, "Preencha o campo E-mail", Toast.LENGTH_SHORT).show();
@@ -52,10 +52,7 @@ public class SignUpActivity extends AppCompatActivity {
             Toast.makeText(this, "Preencha o campo senha", Toast.LENGTH_SHORT).show();
         }else if (passwordConfirm == null || passwordConfirm.equals("")){
             Toast.makeText(this, "Preencha a confirmação de senha", Toast.LENGTH_SHORT).show();
-        }else if (password != passwordConfirm){
-            Toast.makeText(this, "Senhas não conferem", Toast.LENGTH_SHORT).show();
-        }*/
-
+        }
         user = new User();
 
         user.setName(name);

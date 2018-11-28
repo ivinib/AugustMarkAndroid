@@ -4,22 +4,6 @@
     android:layout_height="match_parent" android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txtnameservice"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:text="Nome serviço: "
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/txtNameServiceSchedule"
-            android:layout_width="270dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="16sp" />
-
-
-        <TextView
             android:id="@+id/scheduleDate"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
@@ -66,20 +50,6 @@
             android:text=""
             android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/txtaddress"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:text="Endereço: "
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/txtAddresSchedule"
-            android:layout_width="270dp"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="16sp" />
 
 
 </LinearLayout>

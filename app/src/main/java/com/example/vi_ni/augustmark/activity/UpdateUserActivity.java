@@ -60,7 +60,17 @@ public class UpdateUserActivity extends AppCompatActivity {
     public void validadeUpdate(View view){
         if (edtPassword.equals(edtPasswordConfirm)){
             Toast.makeText(this, "Senhas não conferem", Toast.LENGTH_SHORT).show();
-        }else {
+        }if (edtName == null || edtName.equals("")){
+            Toast.makeText(this, "Preencha o campo Nome", Toast.LENGTH_SHORT).show();
+        }else if (edtEmail == null || edtEmail.equals("")){
+            Toast.makeText(this, "Preencha o campo E-mail", Toast.LENGTH_SHORT).show();
+        }else if (edtPhone == null || edtPhone.equals("")){
+            Toast.makeText(this, "Preencha o campo Telefone", Toast.LENGTH_SHORT).show();
+        }else if (edtUserName == null || edtUserName.equals("")){
+            Toast.makeText(this, "Preencha o campo Usuário", Toast.LENGTH_SHORT).show();
+        }else if (edtPassword == null || edtPassword.equals("")){
+            Toast.makeText(this, "Preencha o campo senha", Toast.LENGTH_SHORT).show();
+        }else{
             user.setName(edtName.getText().toString());
             user.setEmail(edtEmail.getText().toString());
             user.setPhone(edtPhone.getText().toString());

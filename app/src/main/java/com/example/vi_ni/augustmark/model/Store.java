@@ -26,7 +26,7 @@ public class Store {
     private String cnpj;
 
     @ColumnInfo(name = "IDUSER_FK")
-    private Integer idUser;
+    private Long idUser;
 
     @ColumnInfo(name = "IDSTORE_CATEGORY_FK")
     private Integer idStoreCategory;
@@ -61,7 +61,7 @@ public class Store {
         return cnpj;
     }
 
-    public Integer getIdUser() {
+    public Long getIdUser() {
         return idUser;
     }
 
@@ -89,7 +89,7 @@ public class Store {
         this.cnpj = cnpj;
     }
 
-    public void setIdUser(Integer idUser) {
+    public void setIdUser(Long idUser) {
         this.idUser = idUser;
     }
 

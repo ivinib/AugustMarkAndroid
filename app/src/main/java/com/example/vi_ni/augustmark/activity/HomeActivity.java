@@ -15,6 +15,9 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.vi_ni.augustmark.R;
+import com.example.vi_ni.augustmark.model.Address;
+import com.example.vi_ni.augustmark.model.ProductCategory;
+import com.example.vi_ni.augustmark.model.ServiceStatus;
 import com.example.vi_ni.augustmark.model.User;
 import com.example.vi_ni.augustmark.repository.Repository;
 
@@ -26,7 +29,8 @@ public class HomeActivity extends AppCompatActivity
     private Repository repository;
     private User user;
     private Long idUser;
-    TextView txtTeste, txtNameUser;
+    private  TextView txtTeste, txtNameUser;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,23 +106,22 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.schedule) {
-            Intent intent = new Intent(this, ScheduleActivity.class);
-            intent.putExtra("idUser", idUser);
+            intent = new Intent(this, ScheduleActivity.class);
+            intent.putExtra("idUser", user.getIdUser());
             startActivity(intent);
 
         } else if (id == R.id.profile) {
-            Intent intent = new Intent(this, ProfileActivity.class);
-            intent.putExtra("idUser", idUser);
+            intent.putExtra("idUser", user.getIdUser());
             startActivity(intent);
 
         } else if (id == R.id.store){
-            Intent intent = new Intent(this, StoreActivity.class);
-            intent.putExtra("idUser", idUser);
+            intent = new Intent(this, StoreActivity.class);
+            intent.putExtra("idUser", user.getIdUser());
             startActivity(intent);
 
         } else if (id == R.id.requestSchedule){
-            Intent intent = new Intent(this, RequestScheduleActivity.class);
-            intent.putExtra("idUser", idUser);
+            intent = new Intent(this, RequestScheduleActivity.class);
+            intent.putExtra("idUser", user.getIdUser());
             startActivity(intent);
         }
 
@@ -128,26 +131,26 @@ public class HomeActivity extends AppCompatActivity
     }
 
     public void schedule(View view){
-        Intent intent = new Intent(this, ListSchedule.class);
-        intent.putExtra("idUser", idUser);
+        intent = new Intent(this, ScheduleActivity.class);
+        intent.putExtra("idUser", user.getIdUser());
         startActivity(intent);
     }
 
     public void requestSchedule(View view){
-        Intent intent = new Intent(this, RequestScheduleActivity.class);
-        intent.putExtra("idUser", idUser);
+        intent = new Intent(this, RequestScheduleActivity.class);
+        intent.putExtra("idUser", user.getIdUser());
         startActivity(intent);
     }
 
     public void store(View view){
-        Intent intent = new Intent(this, StoreActivity.class);
-        intent.putExtra("idUser", idUser);
+        intent = new Intent(this, StoreActivity.class);
+        intent.putExtra("idUser", user.getIdUser());
         startActivity(intent);
     }
 
     public void allUsers(View view){
-        Intent intent = new Intent(this, AllUsersActivity.class);
-        intent.putExtra("idUser", idUser);
+        intent = new Intent(this, AllUsersActivity.class);
+        intent.putExtra("idUser", user.getIdUser());
         startActivity(intent);
     }
 }

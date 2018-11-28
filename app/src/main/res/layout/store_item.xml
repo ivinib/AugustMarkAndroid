@@ -87,4 +87,25 @@
             android:textSize="16sp" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/userstore"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Usuario: "
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txtStoreUser"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp" />
+    </LinearLayout>
+
 </LinearLayout>

@@ -30,11 +30,9 @@ public interface StoreDAO {
     @Query("SELECT * FROM STORE_TABLE ORDER BY NAME_STORE ASC")
     List<Store> loadStores();
 
-    @Query("SELECT S.NAME_STORE, S.EMAIL_STORE, S.PHONE_STORE, S.CNPJ, U.NAME_USER, U.CPF, U.EMAIL_USER, U.PHONE_USER, SC.NAME_STORE_CATEGORY " +
+    @Query("SELECT S.NAME_STORE, S.EMAIL_STORE, S.PHONE_STORE, S.CNPJ, U.NAME_USER " +
             "FROM STORE_TABLE S INNER JOIN USER_TABLE U " +
-            "ON S.IDUSER_FK = U.IDUSER " +
-            "INNER JOIN STORE_CATEGORY_TABLE SC " +
-            "ON S.IDSTORE_CATEGORY_FK = SC.IDSTORE_CATEGORY ")
+            "ON S.IDUSER_FK = U.IDUSER ")
     List<StoreJoin> loadStoreJoin();
 
     @Query("SELECT NAME_STORE FROM STORE_TABLE")
@@ -45,7 +43,5 @@ public interface StoreDAO {
         public Store store;
         @Embedded
         public User user;
-        @Embedded
-        public StoreCategory storeCategory;
     }
 }

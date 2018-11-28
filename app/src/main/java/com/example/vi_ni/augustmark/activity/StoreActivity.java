@@ -30,10 +30,11 @@ import java.util.List;
 public class StoreActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
 
-    private User user;
+    private User user = null;
     private ListView listView;
     private Repository repository;
     private Intent intent;
+    private Long idUser;
     private ArrayAdapter<StoreDAO.StoreJoin> adapter;
 
     @Override
@@ -43,14 +44,7 @@ public class StoreActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -60,18 +54,18 @@ public class StoreActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        repository = new Repository(getApplicationContext());
 
-
-        /*intent = getIntent();
+        intent = getIntent();
         Bundle bundle = intent.getExtras();
 
-        Long idUser = bundle.getLong("idUser");
+        idUser = bundle.getLong("idUser");
 
         if (user == null){
             user = new User();
 
             user = repository.getUserRepository().loadUserById(idUser);
-        }*/
+        }
 
         listView = findViewById(R.id.listStore);
         repository = new Repository(getApplicationContext());
@@ -81,6 +75,7 @@ public class StoreActivity extends AppCompatActivity
 
     public void newStore(View view){
         intent = new Intent(this, NewStoreActivity.class);
+        intent.putExtra("idUser",user.getIdUser());
         startActivity(intent);
     }
 
