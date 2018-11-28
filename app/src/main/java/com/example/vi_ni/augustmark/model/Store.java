@@ -6,8 +6,7 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity(tableName = "STORE_TABLE",
-        foreignKeys = {@ForeignKey(entity = User.class, parentColumns = "IDUSER", childColumns = "IDUSER_FK"),
-        @ForeignKey(entity = StoreCategory.class, parentColumns = "IDSTORE_CATEGORY", childColumns = "IDSTORE_CATEGORY_FK")})
+        foreignKeys = @ForeignKey(entity = User.class, parentColumns = "IDUSER", childColumns = "IDUSER_FK"))
 public class Store {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "IDSTORE")
@@ -27,9 +26,6 @@ public class Store {
 
     @ColumnInfo(name = "IDUSER_FK")
     private Long idUser;
-
-    @ColumnInfo(name = "IDSTORE_CATEGORY_FK")
-    private Integer idStoreCategory;
 
     public Store(){}
 
@@ -65,10 +61,6 @@ public class Store {
         return idUser;
     }
 
-    public Integer getIdStoreCategory() {
-        return idStoreCategory;
-    }
-
     public void setIdStore(Integer idStore) {
         this.idStore = idStore;
     }
@@ -93,5 +85,4 @@ public class Store {
         this.idUser = idUser;
     }
 
-    public void setIdStoreCategory(Integer idStoreCategory) { this.idStoreCategory = idStoreCategory; }
 }

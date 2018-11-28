@@ -34,12 +34,19 @@ public class RequestScheduleActivity extends AppCompatActivity {
         intent = getIntent();
         Bundle bundle = intent.getExtras();
         idUser = bundle.getLong("idUser");
+
+        if (user == null){
+            user = new User();
+
+            user = repository.getUserRepository().loadUserById(idUser);
+        }
     }
 
     public void addSchedule(View view){
         serviceSchedule = new ServiceSchedule();
         serviceSchedule.setRequestDate(edtDateRequest.getText().toString());
         serviceSchedule.setSchedulingDate(edtDateSchedule.getText().toString());
+        serviceSchedule.setIdUser(user.getIdUser());
 
         repository.getServiceScheduleRepository().insert(serviceSchedule);
 

@@ -15,9 +15,6 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.vi_ni.augustmark.R;
-import com.example.vi_ni.augustmark.model.Address;
-import com.example.vi_ni.augustmark.model.ProductCategory;
-import com.example.vi_ni.augustmark.model.ServiceStatus;
 import com.example.vi_ni.augustmark.model.User;
 import com.example.vi_ni.augustmark.repository.Repository;
 

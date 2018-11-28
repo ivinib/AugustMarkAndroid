@@ -6,10 +6,7 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
-import com.example.vi_ni.augustmark.model.Address;
-import com.example.vi_ni.augustmark.model.Service;
 import com.example.vi_ni.augustmark.model.ServiceSchedule;
-import com.example.vi_ni.augustmark.model.ServiceStatus;
 import com.example.vi_ni.augustmark.model.User;
 
 import java.util.List;

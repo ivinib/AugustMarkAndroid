@@ -5,7 +5,6 @@ import android.os.AsyncTask;
 
 import com.example.vi_ni.augustmark.DAO.ServiceScheduleDAO;
 import com.example.vi_ni.augustmark.database.AugustMarkRoomDataBase;
-import com.example.vi_ni.augustmark.model.Service;
 import com.example.vi_ni.augustmark.model.ServiceSchedule;
 
 import java.util.List;

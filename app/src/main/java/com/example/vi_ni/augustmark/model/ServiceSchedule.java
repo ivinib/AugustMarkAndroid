@@ -9,12 +9,7 @@ import android.nfc.tech.NfcA;
 import java.util.Date;
 
 @Entity(tableName = "SERVICE_SCHEDULE_TABLE",
-        foreignKeys = {
-            @ForeignKey(entity = Service.class, parentColumns = "IDSERVICE", childColumns = "IDSERVICE_FK"),
-            @ForeignKey(entity = Address.class, parentColumns = "IDADDRESS", childColumns = "IDADDRESS_FK") ,
-            @ForeignKey(entity = User.class, parentColumns = "IDUSER", childColumns = "IDUSER_FK"),
-            @ForeignKey(entity = ServiceStatus.class, parentColumns = "IDSERVICE_STATUS", childColumns = "IDSERVICE_STATUS_FK")
-        })
+        foreignKeys = @ForeignKey(entity = User.class, parentColumns = "IDUSER", childColumns = "IDUSER_FK"))
 public class ServiceSchedule {
 
     @PrimaryKey(autoGenerate = true)
@@ -27,17 +22,8 @@ public class ServiceSchedule {
     @ColumnInfo(name = "REQUEST_DATE")
     private String requestDate;
 
-    @ColumnInfo(name = "IDSERVICE_FK")
-    private Integer idService;
-
-    @ColumnInfo(name = "IDADDRESS_FK")
-    private Integer idAddress;
-
     @ColumnInfo(name = "IDUSER_FK")
     private Long idUser;
-
-    @ColumnInfo(name = "IDSERVICE_STATUS_FK")
-    private Integer idServiceStatus;
 
     public ServiceSchedule(){}
 
@@ -59,20 +45,9 @@ public class ServiceSchedule {
         return requestDate;
     }
 
-    public Integer getIdService() {
-        return idService;
-    }
-
-    public Integer getIdAddress() {
-        return idAddress;
-    }
 
     public Long getIdUser() {
         return idUser;
-    }
-
-    public Integer getIdServiceStatus() {
-        return idServiceStatus;
     }
 
     public void setIdServiceSchedule(Integer idServiceSchedule) {
@@ -87,19 +62,8 @@ public class ServiceSchedule {
         this.requestDate = requestDate;
     }
 
-    public void setIdService(Integer idService) {
-        this.idService = idService;
-    }
-
-    public void setIdAddress(Integer idAddress) {
-        this.idAddress = idAddress;
-    }
-
     public void setIdUser(Long idUser) {
         this.idUser = idUser;
     }
 
-    public void setIdServiceStatus(Integer idServiceStatus) {
-        this.idServiceStatus = idServiceStatus;
-    }
 }

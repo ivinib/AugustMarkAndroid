@@ -7,7 +7,6 @@ import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
 import com.example.vi_ni.augustmark.model.Store;
-import com.example.vi_ni.augustmark.model.StoreCategory;
 import com.example.vi_ni.augustmark.model.User;
 
 import java.util.List;
