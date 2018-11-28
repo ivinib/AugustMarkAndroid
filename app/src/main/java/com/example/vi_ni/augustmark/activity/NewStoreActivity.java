@@ -50,7 +50,6 @@ public class NewStoreActivity extends AppCompatActivity {
 
     }
     public void addStore(View view){
-        //Integer id = Integer.parseInt(txtIdStore.getText().toString());
 
         store = new Store();
 
@@ -63,8 +62,6 @@ public class NewStoreActivity extends AppCompatActivity {
         repository.getStoreRepository().insert(store);
         Toast.makeText(this, "Loja cadastrada com sucesso", Toast.LENGTH_SHORT).show();
 
-       /* intent = new Intent(this, StoreActivity.class);
-        startActivity(intent);*/
 
 
     }

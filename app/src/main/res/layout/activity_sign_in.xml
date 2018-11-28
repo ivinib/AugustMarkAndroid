@@ -45,6 +45,7 @@
         android:text="Login"
         android:textSize="20sp"
         android:textAllCaps="false"
-        android:onClick="validateSignin"/>
+        android:onClick="validateSignin"
+        android:background="@color/orange"/>
 
 </LinearLayout>

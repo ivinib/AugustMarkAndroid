@@ -18,10 +18,9 @@ import com.example.vi_ni.augustmark.R;
 import com.example.vi_ni.augustmark.model.User;
 import com.example.vi_ni.augustmark.repository.Repository;
 
-import java.io.Serializable;
 
 public class HomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, Serializable {
+        implements NavigationView.OnNavigationItemSelectedListener{
 
     private Repository repository;
     private User user;
@@ -73,14 +72,6 @@ public class HomeActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
-
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home, menu);
-        return true;
-    }*/
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -108,6 +99,7 @@ public class HomeActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.profile) {
+            intent = new Intent(this, ProfileActivity.class);
             intent.putExtra("idUser", user.getIdUser());
             startActivity(intent);
 

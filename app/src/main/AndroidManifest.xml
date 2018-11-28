@@ -45,7 +45,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.NewStoreActivity" />
         <activity android:name=".activity.RequestScheduleActivity" />
-        <activity android:name=".activity.ListSchedule" />
         <activity android:name=".activity.AllUsersActivity" />
         <activity android:name=".activity.UpdateUserActivity" />
         <activity android:name=".activity.UpdateSchedule"></activity>

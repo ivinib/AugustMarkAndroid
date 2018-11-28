@@ -118,5 +118,6 @@
         android:text="Cadastrar"
         android:textSize="19sp"
         android:textAllCaps="false"
-        android:onClick="validadeUpdate"/>
+        android:onClick="validadeUpdate"
+        android:background="@color/orange"/>
 </LinearLayout>

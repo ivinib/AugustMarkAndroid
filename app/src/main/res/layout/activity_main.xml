@@ -15,7 +15,9 @@
         android:text="Login"
         android:textAllCaps="false"
         android:textSize="20sp"
-        android:onClick="signin"/>
+        android:onClick="signin"
+        android:background="@color/orange"
+        android:layout_margin="3sp"/>
 
 
     <Button
@@ -25,6 +27,8 @@
         android:textAllCaps="false"
         android:text="Cadastrar-se"
         android:textSize="20sp"
-        android:onClick="signup"/>
+        android:onClick="signup"
+        android:layout_margin="3sp"
+        android:background="@color/orange"/>
 
 </LinearLayout>

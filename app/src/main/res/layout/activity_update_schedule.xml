@@ -53,5 +53,6 @@
         android:layout_height="wrap_content"
         android:text="Atualizar"
         android:textAllCaps="false"
-        android:onClick="updateSchedule" />
+        android:onClick="updateSchedule"
+        android:background="@color/orange"/>
 </LinearLayout>
